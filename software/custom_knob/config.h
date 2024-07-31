@@ -1,5 +1,5 @@
 // ===================================================================================
-// User configurations
+// User Configurations
 // ===================================================================================
 
 #pragma once
@@ -34,4 +34,4 @@
 #define MANUF_STR           "wagiminator"
 #define PROD_STR            "CH32X033-TinyKnob"
 #define SERIAL_STR          "CH32X035HID"
-#define INTERF_STR          "HID-Mouse"
+#define INTERF_STR          "HID-Composite"

@@ -26,7 +26,7 @@
 //
 // Operating Instructions:
 // -----------------------
-// - Costomize your rotary encoder knob below in this firmware.
+// - Costomize your rotary encoder knob in the macros.h file.
 // - Connect the board via USB to your PC. It should be detected as a HID composite
 //   device with keyboard, mouse and game controller interface.
 // - Turn the rotary encoder or press the encoder switch.
@@ -42,45 +42,7 @@
 #include <gpio.h>                                 // GPIO functions
 #include <neo_spi.h>                              // NeoPixel functions
 #include <usb_composite.h>                        // USB HID composite functions
-
-// ===================================================================================
-// Macro Functions which associate Actions with Events (Customize your USB Knob here!)
-// ===================================================================================
-//
-// The list of available USB HID functions can be found in include/usb_composite.h
-
-// Rotary encoder example -> volume control knob
-// ---------------------------------------------
-
-// Define action(s) if encoder was rotated clockwise
-static inline void ENC_CW_ACTION() {
-  CON_press(CON_VOL_UP);                                  // press VOLUME UP key
-}
-
-// Define action(s) after encoder was rotated clockwise
-static inline void ENC_CW_RELEASED() {
-  CON_release();                                          // release VOLUME UP KEY
-}
-
-// Define action(s) if encoder was rotated counter-clockwise
-static inline void ENC_CCW_ACTION() {
-  CON_press(CON_VOL_DOWN);                                // press VOLUME DOWN key
-}
-
-// Define action(s) after encoder was rotated counter-clockwise
-static inline void ENC_CCW_RELEASED() {
-  CON_release();                                          // release VOLUME DOWN KEY
-}
-
-// Define action(s) if encoder switch was pressed
-static inline void ENC_SW_PRESSED() {
-  CON_press(CON_VOL_MUTE);                                // press VOLUME MUTE key
-}
-
-// Define action(s) if encoder switch was released
-static inline void ENC_SW_RELEASED() {
-  CON_release();                                          // release VOLUME MUTE key
-}
+#include <macros.h>                               // user defined macros
 
 // ===================================================================================
 // NeoPixels Ring Hue Cycle Function
