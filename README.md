@@ -13,10 +13,10 @@ One of the standout features of the USB Knob is that it requires no driver insta
 CH32X033 is a low-cost microcontroller that utilizes the QingKe 32-bit RISC-V4C core, supporting the RV32IMAC instruction set along with self-extending instructions. This microcontroller comes with a built-in USB PHY and supports USB2.0 full-speed device functions. It features a programmable protocol I/O controller (PIOC), 2 groups of operational amplifiers (OPA) with programmable gain (PGA), 2 groups of analog comparators (CMP), a 12-bit analog-to-digital converter (ADC), a 10-channel touch-key controller, 4 groups of USART, I2C, SPI, multiple timers, and various other peripheral resources. The device can operate at clock frequencies of up to 48MHz and is compatible with a supply voltage range of 2.0V to 5.5V. The CH32X033 includes 62KB of flash, 20KB of SRAM, and an embedded USB bootloader.
 
 ## Building Instructions
-1. Take the Gerber files and send them to a PCB manufacturer of your choosing. They will use these files to create the circuit board for your device.
-2. Once you have the PCB, you can start soldering the components onto it. Use the BOM (bill of materials) and schematic as a guide to make sure everything is connected correctly.
+1. Take the Gerber files (the *zip* file inside the *hardware* folder) and upload them to a PCB (printed circuit board) manufacturer of your choice (e.g., [JLCPCB](https://jlcpcb.com/)). They will use these files to create the circuit board for your device and send it to you.
+2. Once you have the PCB, you can start soldering the components onto it. Use the BOM (bill of materials) and schematic as a guide to make sure everything is connected correctly. You can find the corresponding files in the *hardware* folder.
 3. Upload the firmware by following the instructions in the next section (see below).
-4. To create the case for your device, use the STL files with your 3D printer. Make sure to use transparent filament for the ring.
+4. To create the case for your device, use the *stl* files in the *3dprint* folder with your 3D printer. Make sure to use transparent filament for the ring.
 5. After printing, secure the PCB to the bottom of the case using four self-tapping M2x5mm screws.
 6. Next, glue the ring from the bottom into the circular recess in the top of the case.
 7. Finally, assemble the case. Place the knob onto the rotary encoder. Your device is now ready to use!
@@ -61,11 +61,6 @@ pip install chprog
 Open a terminal and navigate to the folder with the *makefile*. Press the BOOT button and keep it pressed while connecting the board to the USB port of your PC. Run the following command to compile and upload:
 ```
 make flash
-```
-
-If you want to just upload the pre-compiled binary, run the following command instead:
-```
-chprog bin/<firmware>.bin
 ```
 
 ### Other Operating Systems
